@@ -18,7 +18,7 @@ const Footer = () => {
         </ul> 
           <p class="text-center text-body-secondary">© 2025 Company, Inc</p> 
         </footer>
-  )
+  );
 }
 
 export default Footer
