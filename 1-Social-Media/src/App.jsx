@@ -24,6 +24,6 @@ const [selectedTab, setSelectedTab] = useState("Create Post");
       </div>
      
   );
-}
+};
 
 export default App;
