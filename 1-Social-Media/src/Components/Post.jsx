@@ -9,7 +9,7 @@ const Post = () => {
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
-  )
+  );
 }
 
 export default Post
