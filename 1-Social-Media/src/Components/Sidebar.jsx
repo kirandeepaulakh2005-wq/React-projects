@@ -68,4 +68,4 @@ const Sidebar = ({ selectedTab }) => {
   );
 }
 
-export default Sidebar
+export default Sidebar;

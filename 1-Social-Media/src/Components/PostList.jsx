@@ -8,7 +8,7 @@ const PostList = () => {
     <Post></Post>
     </>
     
-  )
+  );
 }
 
-export default PostList
+export default PostList;
