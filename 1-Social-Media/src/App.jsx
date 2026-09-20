@@ -17,6 +17,7 @@ const [selectedTab, setSelectedTab] = useState("Create Post");
 
   return (
      <PostListProvider>
+      <p>This is a social media app.</p>
     <div className="app-container">
      <Sidebar selectedTab={selectedTab}  setSelectedTab={setSelectedTab}/>
       <div className="content">
