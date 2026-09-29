@@ -5,15 +5,29 @@ const CreatePost = () => {
 
  const {addPost}=useContext(PostListContext); 
 
-  const userId=useRef();
-  const postTitle=useRef();
-  const postBody=useRef();
-  const reactions=useRef();
-  const tags=useRef();
+  const userIdElement=useRef();
+  const postTitleElement=useRef();
+  const postBodyElement=useRef();
+  const reactionsElement=useRef();
+  const tagsElement=useRef();
 
   const handleSubmit = (event) =>{
     event.preventDefault();
-  }
+    const userId=userIdElement.current.value;
+    const postTitle=postTitleElement.current.value;
+    const postBody=postBodyElement.current.value;
+    const reactions=reactionsElement.current.value;
+    const tags=tagsElement.current.value.split(' ');
+
+    userIdElement.current.value="";
+    postTitleElement.current.value="";
+    postBodyElement.current.value="";
+    reactionsElement.current.value="";
+    tagsElement.current.value="";
+
+    addPost(userId,postTitle,postBody,reactions,tags)
+  };
+
   return (
     <form className="create-post" onSubmit={handleSubmit}>
 
@@ -23,7 +37,7 @@ const CreatePost = () => {
       </label>
     <input 
     type="text" 
-    ref={userId}
+    ref={userIdElement}
     className="form-control" 
     id="userId"
     placeholder='Your User Id' /> 
@@ -35,7 +49,7 @@ const CreatePost = () => {
       </label>
     <input 
     type="text" 
-    ref={postTitle}
+    ref={postTitleElement}
     className="form-control" 
     id="title"
     placeholder='how are you feeling today ...' /> 
@@ -48,7 +62,7 @@ const CreatePost = () => {
     <textarea
     rows="4"
     type="text" 
-    ref={postBody}
+    ref={postBodyElement}
     className="form-control" 
     id="body"
     placeholder='Tell us more about it' /> 
@@ -60,7 +74,7 @@ const CreatePost = () => {
       </label>
     <input 
     type="text" 
-    ref={reactions}
+    ref={reactionsElement}
     className="form-control" 
     id="reactions"
     placeholder='How many people reacted to this post.' /> 
@@ -72,7 +86,7 @@ const CreatePost = () => {
       </label>
     <input 
     type="text" 
-    ref={tags}
+    ref={tagsElement}
     className="form-control" 
     id="tags"
     placeholder='Please enter tags using space' /> 
